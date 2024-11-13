@@ -1,0 +1,12 @@
+from titan.tuple_class_codegen import TupleField, TupleClassCodegen
+
+
+def generate_code():
+    yield from TupleClassCodegen.generate_imports()
+    yield "class CommandReceipt:"
+    yield "    pass"
+    yield ""
+    yield from TupleClassCodegen.generate_code( 'CommandAcceptedReceipt', [TupleField.str('command_id')], additional_parent_classes=['CommandReceipt'] )
+    yield from TupleClassCodegen.generate_code( 'CommandRejectedReceipt', [TupleField.str('command_id'), TupleField.str('reason')], additional_parent_classes=['CommandReceipt'] )
+    yield from TupleClassCodegen.generate_code( 'InvalidCommandReceipt', [TupleField.str('reason')], additional_parent_classes=['CommandReceipt'] )
+

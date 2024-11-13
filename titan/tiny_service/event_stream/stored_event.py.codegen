@@ -1,0 +1,8 @@
+from titan.tuple_class_codegen import TupleField, TupleClassCodegen
+
+
+def generate_code():
+    yield from TupleClassCodegen.generate_imports()
+    yield from TupleClassCodegen.generate_code('StoredEvent', [ TupleField.str('event_type'),
+                                                                TupleField.bytes('event_bytes') ])
+

@@ -1,0 +1,12 @@
+from titan.tuple_class_codegen import TupleField, TupleClassCodegen
+
+
+def generate_code():
+    yield from TupleClassCodegen.generate_imports()
+    yield from TupleClassCodegen.generate_code('EventMessage', [TupleField.int('seq'),
+                                                                TupleField.str('event_type'),
+                                                                TupleField.bytes('event_bytes') ])
+    yield from TupleClassCodegen.generate_code('CommandMessage', [  TupleField.str('command_type'),
+                                                                    TupleField.bytes('command_bytes') ])
+    yield from TupleClassCodegen.generate_code('CommandReceiptMessage', [   TupleField.str('command_receipt_type'),
+                                                                            TupleField.bytes('command_receipt_bytes')  ])

@@ -1,0 +1,5 @@
+from tests.titan.tiny_service.service.prime_number_processor.service import Service
+from tests.titan.tiny_service.service.prime_number_processor.service_client import ServiceClient
+from tests.titan.tiny_service.service.prime_number_processor.event_stream_file_reader import EventStreamFileReader
+from tests.titan.tiny_service.service.prime_number_processor import service_interface
+

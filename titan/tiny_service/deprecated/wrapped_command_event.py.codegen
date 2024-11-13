@@ -1,0 +1,7 @@
+from titan.tiny_service.events.event_class_codegen import EventField, EventClassCodegen
+from titan.tiny_service.commands.command_class_codegen import CommandField, CommandClassCodegen
+
+def generate_code():
+    yield "\n".join(set(EventClassCodegen.generate_imports()) | set(CommandClassCodegen.generate_imports()))
+    yield from EventClassCodegen.generate_code('WrappedCommandEvent', [EventField.tuple_class('command', 'Command')])
+

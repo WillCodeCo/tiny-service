@@ -1,0 +1,10 @@
+from titan.tiny_service.events.event_class_codegen import EventField, EventClassCodegen
+
+def generate_code():
+    yield from EventClassCodegen.generate_imports()
+    yield from EventClassCodegen.generate_code('DummyStartedEvent', [])
+    yield from EventClassCodegen.generate_code('DummyNoStateChangeEvent', [])
+    yield from EventClassCodegen.generate_code('DummyStateXEvent', [])
+    yield from EventClassCodegen.generate_code('DummyStateYEvent', [])
+    yield from EventClassCodegen.generate_code('DummyStateZEvent', [])
+    yield from EventClassCodegen.generate_code('DummyFinishedEvent', [])
